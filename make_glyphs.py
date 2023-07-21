@@ -17,16 +17,16 @@ characters = digits + ascii_letters + ' '
 image_file = "glyphs2.png"
 xml_file = "glyphs2.xml"
 image_width = 2048
-font_height = 160
+font_height = 171
 
 n_cols = 8
 n_glyphs = len(characters)
 n_rows = ceil(n_glyphs / n_cols)
+row_height = 256
+image_height = row_height * n_rows
 horizontal_padding = 36
 horizontal_spacing = int(image_width / n_cols)
-vertical_spacing = 96
-row_height = font_height + vertical_spacing
-image_height = row_height * n_rows
+vertical_spacing = row_height - font_height
 
 # Draw the glyph image
 character_data = {}
@@ -34,10 +34,10 @@ x = horizontal_padding
 y = font_height  # Start at font_height as the y position is the bottom of the glyph
 with Drawing() as draw, Image(width=image_width, height=image_height) as image:
     draw.font_size = font_height 
-    draw.font = "Microsoft Sans Serif"
+    draw.font_family = "Microsoft Sans Serif"
     draw.fill_color = Color("white")
     for char in characters:
-        metrics = draw.get_font_metrics(image, char, False)
+        metrics = draw.get_font_metrics(image, char)
         if x >= image_width:
             x = horizontal_padding
             y += row_height
