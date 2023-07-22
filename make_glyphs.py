@@ -31,7 +31,8 @@ vertical_spacing = row_height - font_height
 # Draw the glyph image
 character_data = {}
 x = horizontal_padding
-y = font_height  # Start at font_height as the y position is the bottom of the glyph
+y0 = int(font_height - (vertical_spacing / 2)) # Note that the y position is the glyph baseline
+y = y0
 with Drawing() as draw, Image(width=image_width, height=image_height) as image:
     draw.font_size = font_height 
     draw.font_family = "Microsoft Sans Serif"
@@ -58,7 +59,7 @@ for char, (x, y, width, height) in character_data.items():
     uv_height = 0 if is_space else round(height/ image_height, precision)
     uv_width = round(width / image_width, precision)
     uv_left = round(x / image_width, precision)
-    uv_top = round((y - font_height) / image_height, precision)
+    uv_top = round((y - y0) / image_height, precision)
     size_width = round(get_size_width(width, horizontal_spacing, n_cols), 4)
     size_height = round(get_size_height(height, image_height), 4)
     width = size_width if is_space else width
