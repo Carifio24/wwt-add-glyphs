@@ -14,6 +14,10 @@ def get_size_height(extent_height, image_height):
 
 # characters = digits + ascii_letters + " -+:/" 
 characters = digits + ascii_letters + ' '
+
+# For comparison with the original image
+# characters = " 0hr123456789-+JanuyFebMcApilgstSmOoNvDBCEdqVjxGHILPRTU"
+
 image_file = "glyphs2.png"
 xml_file = "glyphs2.xml"
 image_width = 2048
@@ -26,17 +30,20 @@ row_height = 256
 image_height = row_height * n_rows
 horizontal_padding = 36
 horizontal_spacing = int(image_width / n_cols)
+vertical_padding = 36
 vertical_spacing = row_height - font_height
 
 # Draw the glyph image
 character_data = {}
 x = horizontal_padding
-y0 = int(font_height - (vertical_spacing / 2)) # Note that the y position is the glyph baseline
+y0 = int(font_height - (vertical_spacing / 2)) + vertical_padding # Note that the y position is the glyph baseline
 y = y0
 with Drawing() as draw, Image(width=image_width, height=image_height) as image:
     draw.font_size = font_height 
-    draw.font_family = "Microsoft Sans Serif"
+    draw.font = "Microsoft Sans Serif"
     draw.fill_color = Color("white")
+    draw.font_style = "normal"
+    draw.font_stretch = "expanded"  # maybe?
     for char in characters:
         metrics = draw.get_font_metrics(image, char)
         if x >= image_width:
