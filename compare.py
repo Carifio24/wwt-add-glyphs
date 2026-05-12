@@ -6,4 +6,5 @@ result = compare_images(
     tol=1.6,
 )
 
+print("Result:")
 print(result)

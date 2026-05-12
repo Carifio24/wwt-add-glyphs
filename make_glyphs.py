@@ -55,6 +55,10 @@ with Drawing() as draw, Image(width=image_width, height=image_height, background
         draw.text(x, y, char)
         x += horizontal_spacing
 
+    image.alpha_channel = True
+    if image.colorspace != 'srgb':
+        image.transform_colorspace('srgb')
+    image.type = "truecolor"
     draw(image)
     image.save(filename=image_file)
 
