@@ -39,7 +39,7 @@ character_data = {}
 x = horizontal_padding
 y0 = int(font_height - (vertical_spacing / 2)) + vertical_padding # Note that the y position is the glyph baseline
 y = y0
-with Drawing() as draw, Image(width=image_width, height=image_height) as image:
+with Drawing() as draw, Image(width=image_width, height=image_height, background=Color('rgba(0, 0, 0, 0)'), format="png") as image:
     draw.font_size = font_height 
     draw.font_family = "Microsoft Sans Serif"
     draw.fill_color = Color("white")
