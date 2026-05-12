@@ -42,7 +42,7 @@ y = y0
 with Drawing() as draw, Image(width=image_width, height=image_height, background=Color('rgba(0, 0, 0, 0)'), format="png") as image:
     draw.font_size = font_height 
     draw.font_family = "Microsoft Sans Serif"
-    draw.fill_color = Color("white")
+    draw.fill_color = Color("rgba(255, 255, 255, 0)")
     draw.font_style = "normal"
     draw.font_weight = 1
     for char in characters:
