@@ -39,10 +39,10 @@ character_data = {}
 x = horizontal_padding
 y0 = int(font_height - (vertical_spacing / 2)) + vertical_padding # Note that the y position is the glyph baseline
 y = y0
-with Drawing() as draw, Image(width=image_width, height=image_height, background=Color('rgba(0, 0, 0, 0)'), format="png") as image:
+with Drawing() as draw, Image(width=image_width, height=image_height, background=Color('transparent'), format="PNG32") as image:
     draw.font_size = font_height 
     draw.font_family = "Microsoft Sans Serif"
-    draw.fill_color = Color("rgba(255, 255, 255, 0)")
+    draw.fill_color = Color("rgba(255, 255, 255, 1)")
     draw.font_style = "normal"
     draw.font_weight = 1
     for char in characters:
@@ -55,12 +55,9 @@ with Drawing() as draw, Image(width=image_width, height=image_height, background
         draw.text(x, y, char)
         x += horizontal_spacing
 
-    image.alpha_channel = True
-    if image.colorspace != 'srgb':
-        image.transform_colorspace('srgb')
-    image.type = "truecolor"
     draw(image)
-    image.save(filename=image_file)
+    image.alpha_channel = True
+    image.save(filename=f"PNG32:{image_file}")
 
 # Create the XML file
 precision = 8
