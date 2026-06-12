@@ -29,32 +29,56 @@ n_rows = ceil(n_glyphs / n_cols)
 n_rows = 8
 row_height = 256
 image_height = row_height * n_rows
-horizontal_padding = 30
+
+padding = 28
+horizontal_padding = padding
 horizontal_spacing = int(image_width / n_cols)
-vertical_padding = 30
+vertical_padding = padding
 vertical_spacing = row_height - font_height
 
 # Draw the glyph image
 character_data = {}
 x = horizontal_padding
-y0 = int(font_height - (vertical_spacing / 2)) + vertical_padding  # Note that the y position is the glyph baseline
+# y0 = int(font_height - (vertical_spacing / 2)) + vertical_padding  # Note that the y position is the glyph baseline
+y0 = 0
 y = y0
+color = Color("rgba(255, 255, 255, 1)")
+horizontal_addition = 3
 with Drawing() as draw, Image(width=image_width, height=image_height, background=Color('transparent'), format="PNG32") as image:
     draw.font_size = font_height 
     draw.font_family = "Microsoft Sans Serif"
-    draw.fill_color = Color("rgba(255, 255, 255, 1)")
+    draw.fill_color = color
     draw.font_style = "normal"
-    draw.font_stretch = "semi_condensed"
-    draw.font_weight = 1
+
+    # stroke_width = 3
+    # draw.stroke_width = stroke_width
+    # draw.stroke_color = color
+
     for char in characters:
+        
         metrics = draw.get_font_metrics(image, char)
+        width = round(metrics.text_width) if char != ' ' else 30
+        height = round(metrics.text_height)
+        with Image(width=width, height=height, background=Color("transparent")) as char_img:
+            with Drawing() as char_ctx:
+                char_ctx.font_family = draw.font_family
+                char_ctx.font_size = draw.font_size
+                char_ctx.fill_color = draw.fill_color
+                char_ctx.text(0, int(metrics.ascender), char)
+                char_ctx(char_img)
+            
+            new_width = width + horizontal_addition
+            char_img.resize(new_width, height)
+            image.composite(char_img, left=x, top=y)
+            
+ 
+        character_data[char] = (x, y, new_width, height)
+        # draw.text(x, y, char)
+        x += horizontal_spacing
+
         if x >= image_width:
             x = horizontal_padding
             y += row_height
-        width = round(metrics.text_width) if char != ' ' else 0
-        character_data[char] = (x, y, width, round(metrics.text_height))
-        draw.text(x, y, char)
-        x += horizontal_spacing
 
     draw(image)
     image.alpha_channel = True
