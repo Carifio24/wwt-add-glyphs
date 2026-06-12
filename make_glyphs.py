@@ -29,14 +29,17 @@ n_rows = ceil(n_glyphs / n_cols)
 n_rows = 8
 row_height = 256
 image_height = row_height * n_rows
-horizontal_padding = 30
+
+padding = 32
+horizontal_padding = padding
 horizontal_spacing = int(image_width / n_cols)
-vertical_padding = 30
+vertical_padding = padding
 vertical_spacing = row_height - font_height
 
 # Draw the glyph image
 character_data = {}
-x = horizontal_padding
+horizontal_start = 29
+x = horizontal_start
 y0 = int(font_height - (vertical_spacing / 2)) + vertical_padding  # Note that the y position is the glyph baseline
 y = y0
 with Drawing() as draw, Image(width=image_width, height=image_height, background=Color('transparent'), format="PNG32") as image:
@@ -44,14 +47,13 @@ with Drawing() as draw, Image(width=image_width, height=image_height, background
     draw.font_family = "Microsoft Sans Serif"
     draw.fill_color = Color("rgba(255, 255, 255, 1)")
     draw.font_style = "normal"
-    draw.font_stretch = "semi_condensed"
     draw.font_weight = 1
     for char in characters:
         metrics = draw.get_font_metrics(image, char)
         if x >= image_width:
-            x = horizontal_padding
+            x = horizontal_start
             y += row_height
-        width = round(metrics.text_width) if char != ' ' else 0
+        width = round(metrics.text_width) + 3 if char != ' ' else 0
         character_data[char] = (x, y, width, round(metrics.text_height))
         draw.text(x, y, char)
         x += horizontal_spacing
@@ -68,7 +70,7 @@ for char, (x, y, width, height) in character_data.items():
     is_space = char == ' '
     uv_height = 0 if is_space else round(height / image_height, precision)
     uv_width = round(width / image_width, precision)
-    uv_left = round(x / image_width, precision)
+    uv_left = round(x / image_width, 7)
     uv_top = round((y - y0) / image_height, precision)
     size_width = round(get_size_width(width, horizontal_spacing, n_cols), 4)
     size_height = round(get_size_height(height, image_height), 4)
