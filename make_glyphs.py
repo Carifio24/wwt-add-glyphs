@@ -1,4 +1,5 @@
 from math import ceil
+from os.path import join
 from string import ascii_letters, digits
 
 from lxml.etree import Element, SubElement, tostring
@@ -18,8 +19,8 @@ characters = digits + ascii_letters + ' '
 # For comparison with the original image
 characters = " 0hr123456789-+JanuyFebMcApilgstSmOoNvDBCEdqVjxGHILPRTU"
 
-image_file = "glyphs2.png"
-xml_file = "glyphs2.xml"
+image_file = join("test", "glyphs2.png")
+xml_file = join("test", "glyphs2.xml")
 image_width = 2048
 font_height = 171
 
