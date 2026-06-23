@@ -1,11 +1,10 @@
 let currentChoice = 1;
 
-function updateGlyphs(choice) {
+function createGlyphCache(choice) {
   if (choice == currentChoice) { return; }
 
-  const cache = wwtlib.GlyphCache;
+  const cache = new wwtlib.GlyphCache();
 
-  cache.cleanUpAll();
   let spriteSheet = `glyphs${choice}.png`;
   let xmlSheet = `glyphs${choice}.xml`;
   if (choice == 1) {
@@ -14,9 +13,11 @@ function updateGlyphs(choice) {
   }
   
   cache._texture = wwtlib.Texture.fromUrl(spriteSheet);
-  cache._webFile = new wwtlib.WebFile(spriteSheet);
+  cache._webFile = new wwtlib.WebFile(xmlSheet);
   cache._webFile.onStateChange = cache._glyphXmlReady.bind(cache);
   cache._webFile.send();
+
+  return cache;
 }
 
 function onWWTReady() {
@@ -28,9 +29,12 @@ function onWWTReady() {
 }
 
 function onLoad() {
-  selector.addEventListener("input", event => {
-    const choice = Number(event.data);
-    updateGlyphs(choice);
+  selector.addEventListener("change", event => {
+    const choice = Number(event.target.value);
+    const cache = createGlyphCache(choice);
+    const namesBatch = wwtlib.Constellations._namesBatch;
+    namesBatch._glyphCache = cache;
+    namesBatch.prepareBatch();
   });
 
   const builder = new wwtlib.WWTControlBuilder("wwtcanvas");
