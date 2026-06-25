@@ -17,10 +17,11 @@ def get_size_height(extent_height, image_height):
 characters = digits + ascii_letters + ' '
 
 # For comparison with the original image
-characters = " 0hr123456789-+JanuyFebMcApilgstSmOoNvDBCEdqVjxGHILPRTU"
+# characters = " 0hr123456789-+JanuyFebMcApilgstSmOoNvDBCEdqVjxGHILPRTU"
 
-image_file = join("test", "glyphs2.png")
-xml_file = join("test", "glyphs2.xml")
+output_folder = "docs"
+image_file = join(output_folder, "glyphs2.png")
+xml_file = join(output_folder, "glyphs2.xml")
 image_width = 2048
 font_height = 171
 
