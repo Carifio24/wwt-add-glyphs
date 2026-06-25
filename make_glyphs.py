@@ -13,8 +13,8 @@ def get_size_width(extent_width, horizontal_spacing, n_cols):
 def get_size_height(extent_height, image_height):
     return extent_height + round((image_height * 0.01), 1)
 
-# characters = digits + ascii_letters + " -+:/" 
-characters = digits + ascii_letters + ' '
+characters = digits + ascii_letters + " -+:/" 
+# characters = digits + ascii_letters + ' '
 
 # For comparison with the original image
 # characters = " 0hr123456789-+JanuyFebMcApilgstSmOoNvDBCEdqVjxGHILPRTU"
@@ -28,7 +28,6 @@ font_height = 171
 n_cols = 8
 n_glyphs = len(characters)
 n_rows = ceil(n_glyphs / n_cols)
-n_rows = 8
 row_height = 256
 image_height = row_height * n_rows
 
