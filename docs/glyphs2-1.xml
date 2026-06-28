@@ -1,0 +1,33 @@
+<GlyphItems>
+  <GlyphItem Glyph="#" UVHeight="0.09472656" UVWidth="0.04785156" UVTop="0.0" UVLeft="0.0141602" ExtentsWidth="98" ExtentsHeight="194" SizeWidth="154.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="$" UVHeight="0.09472656" UVWidth="0.04785156" UVTop="0.0" UVLeft="0.1391602" ExtentsWidth="98" ExtentsHeight="194" SizeWidth="154.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="%" UVHeight="0.09472656" UVWidth="0.07568359" UVTop="0.0" UVLeft="0.2641602" ExtentsWidth="155" ExtentsHeight="194" SizeWidth="211.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="&amp;" UVHeight="0.09472656" UVWidth="0.05712891" UVTop="0.0" UVLeft="0.3891602" ExtentsWidth="117" ExtentsHeight="194" SizeWidth="173.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="'" UVHeight="0.09472656" UVWidth="0.01757812" UVTop="0.0" UVLeft="0.5141602" ExtentsWidth="36" ExtentsHeight="194" SizeWidth="92.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="(" UVHeight="0.09472656" UVWidth="0.02929688" UVTop="0.0" UVLeft="0.6391602" ExtentsWidth="60" ExtentsHeight="194" SizeWidth="116.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph=")" UVHeight="0.09472656" UVWidth="0.02929688" UVTop="0.0" UVLeft="0.7641602" ExtentsWidth="60" ExtentsHeight="194" SizeWidth="116.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="*" UVHeight="0.09472656" UVWidth="0.03417969" UVTop="0.0" UVLeft="0.8891602" ExtentsWidth="70" ExtentsHeight="194" SizeWidth="126.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="+" UVHeight="0.09472656" UVWidth="0.05029297" UVTop="0.5" UVLeft="0.0141602" ExtentsWidth="103" ExtentsHeight="194" SizeWidth="159.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="," UVHeight="0.09472656" UVWidth="0.02490234" UVTop="0.125" UVLeft="0.1391602" ExtentsWidth="51" ExtentsHeight="194" SizeWidth="107.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="-" UVHeight="0.09472656" UVWidth="0.02929688" UVTop="0.375" UVLeft="0.8891602" ExtentsWidth="60" ExtentsHeight="194" SizeWidth="116.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="." UVHeight="0.09472656" UVWidth="0.02490234" UVTop="0.125" UVLeft="0.3891602" ExtentsWidth="51" ExtentsHeight="194" SizeWidth="107.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="/" UVHeight="0.09472656" UVWidth="0.02490234" UVTop="0.125" UVLeft="0.5141602" ExtentsWidth="51" ExtentsHeight="194" SizeWidth="107.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph=":" UVHeight="0.09472656" UVWidth="0.02490234" UVTop="0.125" UVLeft="0.6391602" ExtentsWidth="51" ExtentsHeight="194" SizeWidth="107.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph=";" UVHeight="0.09472656" UVWidth="0.02490234" UVTop="0.125" UVLeft="0.7641602" ExtentsWidth="51" ExtentsHeight="194" SizeWidth="107.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="&lt;" UVHeight="0.09472656" UVWidth="0.05029297" UVTop="0.125" UVLeft="0.8891602" ExtentsWidth="103" ExtentsHeight="194" SizeWidth="159.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="=" UVHeight="0.09472656" UVWidth="0.05029297" UVTop="0.25" UVLeft="0.0141602" ExtentsWidth="103" ExtentsHeight="194" SizeWidth="159.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="&gt;" UVHeight="0.09472656" UVWidth="0.05029297" UVTop="0.25" UVLeft="0.1391602" ExtentsWidth="103" ExtentsHeight="194" SizeWidth="159.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="?" UVHeight="0.09472656" UVWidth="0.04785156" UVTop="0.25" UVLeft="0.2641602" ExtentsWidth="98" ExtentsHeight="194" SizeWidth="154.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="@" UVHeight="0.09472656" UVWidth="0.08642578" UVTop="0.25" UVLeft="0.3891602" ExtentsWidth="177" ExtentsHeight="194" SizeWidth="233.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="[" UVHeight="0.09472656" UVWidth="0.02490234" UVTop="0.25" UVLeft="0.5141602" ExtentsWidth="51" ExtentsHeight="194" SizeWidth="107.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="\" UVHeight="0.09472656" UVWidth="0.02490234" UVTop="0.25" UVLeft="0.6391602" ExtentsWidth="51" ExtentsHeight="194" SizeWidth="107.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="]" UVHeight="0.09472656" UVWidth="0.02490234" UVTop="0.25" UVLeft="0.7641602" ExtentsWidth="51" ExtentsHeight="194" SizeWidth="107.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="^" UVHeight="0.09472656" UVWidth="0.04052734" UVTop="0.25" UVLeft="0.8891602" ExtentsWidth="83" ExtentsHeight="194" SizeWidth="139.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="_" UVHeight="0.09472656" UVWidth="0.04833984" UVTop="0.375" UVLeft="0.0141602" ExtentsWidth="99" ExtentsHeight="194" SizeWidth="155.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="`" UVHeight="0.09472656" UVWidth="0.02929688" UVTop="0.375" UVLeft="0.1391602" ExtentsWidth="60" ExtentsHeight="194" SizeWidth="116.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="{" UVHeight="0.09472656" UVWidth="0.02929688" UVTop="0.375" UVLeft="0.2641602" ExtentsWidth="60" ExtentsHeight="194" SizeWidth="116.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="|" UVHeight="0.09472656" UVWidth="0.02294922" UVTop="0.375" UVLeft="0.3891602" ExtentsWidth="47" ExtentsHeight="194" SizeWidth="103.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="}" UVHeight="0.09472656" UVWidth="0.02929688" UVTop="0.375" UVLeft="0.5141602" ExtentsWidth="60" ExtentsHeight="194" SizeWidth="116.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph="~" UVHeight="0.09472656" UVWidth="0.05029297" UVTop="0.375" UVLeft="0.6391602" ExtentsWidth="103" ExtentsHeight="194" SizeWidth="159.8889" SizeHeight="214.5"/>
+  <GlyphItem Glyph=" " UVHeight="0" UVWidth="0.0" UVTop="0.375" UVLeft="0.7641602" ExtentsWidth="56.8889" ExtentsHeight="194" SizeWidth="56.8889" SizeHeight="214.5"/>
+</GlyphItems>
