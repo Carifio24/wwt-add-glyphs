@@ -1,9 +1,22 @@
 from os.path import join
 from string import ascii_letters, digits, punctuation
 
+from fontTools.ttLib import TTFont
 from lxml.etree import Element, SubElement, tostring
 from wand.drawing import Color, Drawing
 from wand.image import Image
+
+
+def check_char_in_font(char_to_check, font_path):
+    # Load the font file
+    font = TTFont(font_path)
+
+    # Check the Unicode cmap table
+    for cmap in font['cmap'].tables:
+        if cmap.isUnicode():
+            if ord(char_to_check) in cmap.cmap:
+                return True
+    return False
 
 
 def get_size_width(extent_width, horizontal_spacing, n_cols):
@@ -29,7 +42,7 @@ def write_xml(root, filepath):
         f.write(tostring(root, pretty_print=True).decode())
 
 
-characters = digits + ascii_letters + punctuation + " -+" 
+characters = digits + ascii_letters + punctuation + " -+äëïöü" 
 
 # For comparison with the original image
 # characters = " 0hr123456789-+JanuyFebMcApilgstSmOoNvDBCEdqVjxGHILPRTU"
@@ -72,6 +85,11 @@ for index, batch in enumerate(batches(characters, batch_size)):
         draw.font_style = "normal"
         draw.font_weight = 1
         for char in batch:
+            
+            in_font = check_char_in_font(char, "micross.ttf")
+            if not in_font:
+                raise ValueError(f"Character {char} is not in Microsoft Sans Serif")
+
             metrics = draw.get_font_metrics(image, char)
             if x >= image_width:
                 x = horizontal_start
@@ -118,10 +136,11 @@ for index, data in enumerate(batches_data):
     element = SubElement(root, "GlyphFile")
     element.set("ImagePath", glyph_filename(index, "png"))
     element.set("XMLPath", glyph_filename(index, "xml"))
+    element.set("Index", str(index))
 
     for character in data.keys():
-        glyph = SubElement(element, "GlyphItem")
-        glyph.set("Glyph", character)
+        glyph = SubElement(element, "Glyph")
+        glyph.set("Character", character)
 
 metadata_output = join(output_folder, "glyphs2_summary.xml")
 write_xml(root, metadata_output)
